@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('entretiens', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('garage_id');
+            $table->unsignedBigInteger('mobile_id');
+            $table->date('date_entretien');
+            $table->text('entretien');
+            $table->float('cout');
+            $table->foreign('garage_id')->references('id')->on('garage')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('mobile_id')->references('id')->on('mobile')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

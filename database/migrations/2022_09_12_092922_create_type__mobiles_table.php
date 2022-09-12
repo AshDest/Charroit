@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('type__mobiles', function (Blueprint $table) {
             $table->id();
+            $table->string('designation');
             $table->timestamps();
         });
     }

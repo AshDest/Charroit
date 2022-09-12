@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('garages', function (Blueprint $table) {
             $table->id();
+            $table->string('nomgarage');
+            $table->string('contact');
+            $table->text('adresse');
             $table->timestamps();
         });
     }
