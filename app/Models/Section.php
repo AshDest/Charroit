@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Section extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'designation'
+    ];
+
+    public function mobile()
+    {
+        return $this->hasMany(Mobile::class);
+    }
+
 }

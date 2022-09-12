@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Garage extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nomgarage',
+        'contact',
+        'adresse'
+    ];
 }
