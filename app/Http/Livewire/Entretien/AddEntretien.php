@@ -2,6 +2,9 @@
 
 namespace App\Http\Livewire\Entretien;
 
+use App\Models\Entretien;
+use App\Models\Garage;
+use App\Models\Mobile;
 use Livewire\Component;
 
 class AddEntretien extends Component
@@ -31,9 +34,9 @@ class AddEntretien extends Component
     // vider les champs
     public function resetFields()
     {
-        $this->garage_id = '';
-        $this->mobile_id = '';
-        $this->date_entretien = '';
+        $this->garage_id = null;
+        $this->mobile_id = null;
+        $this->date_entretien = null;
         $this->entretien = '';
         $this->cout = '';
     }
@@ -42,8 +45,37 @@ class AddEntretien extends Component
     {
         $this->validateOnly($propertyName);
     }
+
+    public function save()
+    {
+        $this->validate();
+        try {
+            Entretien::create([
+                'immatriculation' => $this->designation,
+                'garage_id' => $this->garage_id,
+                'mobile_id' => $this->mobile_id,
+                'date_entretien' => $this->date_entretien,
+                'entretien' => $this->entretien,
+                'cout' => $this->cout,
+            ])->save();
+            // Set Flash Message
+            $this->dispatchBrowserEvent('ok', [
+                'message' => '<b>Succès</b><br/><span style="color: #2d3354; ">enregistré</span>',
+            ]);
+            $this->resetFields();
+        } catch (\Exception $e) {
+            // Set Flash Message
+            $this->dispatchBrowserEvent('fail', [
+                'message' => "Quelque chose ne va pas lors de l'enregistrement du Client'!! " . $e->getMessage()
+            ]);
+            // Reset Form Fields After Creating departement
+            $this->resetFields();
+        }
+    }
     public function render()
     {
-        return view('livewire.entretien.add-entretien');
+        $mobiles = Mobile::all();
+        $garages = Garage::all();
+        return view('livewire.entretien.add-entretien', ['mobiles' => $mobiles], ['garages' => $garages]);
     }
 }

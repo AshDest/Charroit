@@ -66,7 +66,6 @@ class ModifyMobile extends Component
 
     public function mount(){
         $var = Mobile::find($this->id);
-        $this->designation = $var->designation;
 
         $this->immatriculation = $var->immatriculation;
         $this->num_chassis = $var->num_chassis;
@@ -76,6 +75,23 @@ class ModifyMobile extends Component
         $this->kilometrage = $var->kilometrage;
         $this->type_id = $var->type_id;
         $this->section_id = $var->section_id;
+    }
+    public function update(){
+        $this->validate();
+        Mobile::whereId($this->id)->update([
+            'immatriculation' => ucfirst(trans($this->designation)),
+            'num_chassis' => ucfirst(trans($this->designation)),
+            'marque' => ucfirst(trans($this->designation)),
+            'couleur' => ucfirst(trans($this->designation)),
+            'anneefabrication' => $this->anneefabrication,
+            'kilometrage' => $this->kilometrage,
+            'type_id' => $this->type_id,
+            'section_id' => $this->section_id
+        ]);
+
+        $this->dispatchBrowserEvent('ok', [
+            'message'=>'<b>Succès</b><br/><span style="color: #2d3354; ">Avocat modifié</span>',
+        ]);
     }
     public function render()
     {
