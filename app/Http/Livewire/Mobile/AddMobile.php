@@ -29,8 +29,6 @@ class AddMobile extends Component
     ];
 
     protected $messages = [
-        'designation.required' => 'ce Champ est obligatoire',
-
         'immatriculation.required' => 'ce Champ est obligatoire',
         'num_chassis.required' => 'ce Champ est obligatoire',
         'marque.required' => 'ce Champ est obligatoire',
