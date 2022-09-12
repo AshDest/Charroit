@@ -18,7 +18,7 @@ class TypeMobiles extends Component
     public $selbypriority = NULL;
 
     public $designation;
-    public $ids;
+    public $ids, $page_active;
 
     public $update=false;
 
@@ -107,7 +107,7 @@ class TypeMobiles extends Component
     }
     public function render()
     {
-        $typesmobiles = Type_Mobile::all();
+        $typesmobiles = Type_Mobile::all()->paginate($this->page_active);
         return view('livewire.type-mobile.type-mobiles', ['typesmobiles' => $typesmobiles]);
     }
 }

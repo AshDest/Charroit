@@ -136,7 +136,7 @@
 
                                     </tbody>
                                 </table>
-                                @if (count($users))
+                                @if (count($typesmobiles))
                                 {{$typesmobiles->links('vendor.livewire.bootstrap')}}
                                 @endif
                             </div>
