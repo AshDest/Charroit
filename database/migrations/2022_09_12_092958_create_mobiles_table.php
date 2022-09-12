@@ -24,7 +24,7 @@ return new class extends Migration
             $table->unsignedBigInteger('type_id');
             $table->unsignedBigInteger('section_id');
             $table->foreign('type_id')->references('id')->on('type__mobiles')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('section_id')->references('id')->on('section')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

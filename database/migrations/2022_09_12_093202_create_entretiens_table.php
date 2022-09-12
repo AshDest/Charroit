@@ -20,8 +20,8 @@ return new class extends Migration
             $table->date('date_entretien');
             $table->text('entretien');
             $table->float('cout');
-            $table->foreign('garage_id')->references('id')->on('garage')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('mobile_id')->references('id')->on('mobile')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('garage_id')->references('id')->on('garages')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('mobile_id')->references('id')->on('mobiles')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
