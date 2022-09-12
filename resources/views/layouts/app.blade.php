@@ -8,19 +8,19 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
         <link rel="shortcut icon" href="{{ asset('dist/images/favicon.ico') }}" />
-        <meta name="viewport" content="width=device-width,initial-scale=1"> 
+        <meta name="viewport" content="width=device-width,initial-scale=1">
 
         <!-- START: Template CSS-->
         <link rel="stylesheet" href="{{ asset('dist/vendors/bootstrap/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('dist/vendors/jquery-ui/jquery-ui.min.css') }}">
         <link rel="stylesheet" href="{{ asset('dist/vendors/jquery-ui/jquery-ui.theme.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist/vendors/simple-line-icons/css/simple-line-icons.css') }}">        
-        <link rel="stylesheet" href="{{ asset('dist/vendors/flags-icon/css/flag-icon.min.css') }}"> 
+        <link rel="stylesheet" href="{{ asset('dist/vendors/simple-line-icons/css/simple-line-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('dist/vendors/flags-icon/css/flag-icon.min.css') }}">
 
-        <!-- END Template CSS-->     
+        <!-- END Template CSS-->
 
-        <!-- START: Page CSS-->   
-        <link rel="stylesheet" href="{{ asset('dist/vendors/social-button/bootstrap-social.css') }}"/>   
+        <!-- START: Page CSS-->
+        <link rel="stylesheet" href="{{ asset('dist/vendors/social-button/bootstrap-social.css') }}"/>
         <!-- END: Page CSS-->
 
         <!-- START: Custom CSS-->
@@ -39,10 +39,10 @@
         <script src="{{ asset('dist/vendors/jquery/jquery-3.3.1.min.js') }}"></script>
         <script src="{{ asset('dist/vendors/jquery-ui/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('dist/vendors/moment/moment.js') }}"></script>
-        <script src="{{ asset('dist/vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>    
+        <script src="{{ asset('dist/vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('dist/vendors/slimscroll/jquery.slimscroll.min.js') }}"></script>
 
-        <!-- END: Template JS-->  
+        <!-- END: Template JS-->
     </body>
     <!-- END: Body-->
 </html>
