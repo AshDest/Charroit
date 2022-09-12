@@ -33,7 +33,7 @@ class ModifyType extends Component
 
     public function mount(){
         $var = Type_Mobile::find($this->id);
-        $this->designation = $var->nom;
+        $this->designation = $var->designation;
     }
     public function update(){
         $this->validate();
