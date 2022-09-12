@@ -4,19 +4,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Cabinet</title>
+    <title>Charroit</title>
     <link rel="shortcut icon" href="{{ asset('dist/images/favicon3.png') }}" />
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta id="token" name="token" content="{{ csrf_token() }}">
-    <title>Cabinet Avocat</title>
+    <title>Charroit</title>
     <link rel="shortcut icon" href="{{ asset('dist/images/favicon.ico') }}" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <!-- START: Head-->
     <head>
         <meta charset="UTF-8">
-        <title>Cabinet</title>
+        <title>Charroit</title>
         <link rel="shortcut icon" href="{{ asset('dist/images/favicon3.png') }}"/>
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1">

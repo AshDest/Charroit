@@ -3,16 +3,16 @@
             <div class="site-width">
                 <!-- START: Menu-->
                 <ul id="side-menu" class="sidebar-menu">
-                    <li class="dropdown active" class="colorText"><a href="#">
+                    <li class="dropdown active" class="colorText"><a href="/">
                         <i class="fas fa-warehouse mr-1" style="color: #EF8354; ">
                     </i><span class="colorText">Tableau de bord</span></a></li>
                     <li class="dropdown"><a href="#"><i class="far fa-sun mr-1" style="color: #EF8354; "></i><span class="colorText">Configuration</span></a>
                         <ul>
-                            <li><a href="{{route('add-cabinet')}}">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
+                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
                                 <span>Cabinet</span></a>
 
                             </li>
-                            <li><a href="{{route('categorie')}}">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
+                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
                                 <span>Categorie client</span></a>
 
                             </li>
@@ -20,26 +20,26 @@
                                 <span>Type client</span></a> --}}
 
                             </li>
-                            <li><a href="{{route('departement')}}">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
+                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
                                 <span>Departement</span></a>
 
                             </li>
-                            <li><a href="{{route('instance')}}">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
+                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
                                 <span>Instance</span></a>
 
                             </li>
-                            <li><a href="{{route('matiere')}}">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
+                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
                                 <span>Matiere</span></a>
 
                             </li>
 
-                            <li><a href="{{route('avocat')}}">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
+                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
                                 <span>Avocat</span></a>
                             </li>
-                            <li><a href="{{route('speciality')}}">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
+                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
                                 <span>Spécialité</span></a>
                             </li>
-                            <li><a href="{{route('affectationspecialite')}}">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
+                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
                                 <span>Affectation Spécialite</span></a>
                             </li>
                         </ul>
@@ -48,8 +48,8 @@
                         <i class="fas fa-users mr-1" style="color: #EF8354; "></i>
                         <span class="colorText">Users</span></a>
                         <ul>
-                            <li><a href="{{route('niveau-access')}}">&nbsp;&nbsp;<i class="fas fa-user-plus"></i> Niveau Access</a></li>
-                            <li><a href="{{route('user')}}">&nbsp;&nbsp;<i class="icon-book-open"></i>Créer users</a></li>
+                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-user-plus"></i> Niveau Access</a></li>
+                            <li><a href="">&nbsp;&nbsp;<i class="icon-book-open"></i>Créer users</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#">
@@ -65,8 +65,8 @@
                         <i class="icon-layers mr-1" style="color: #EF8354; "></i>
                         <span class="colorText">Dossier</span></a>
                         <ul>
-                            <li><a href="{{route('dossier')}}">&nbsp;&nbsp;<i class="icon-plus"></i> Creer</a></li>
-                            <li><a href="{{route('liste-dossier')}}">&nbsp;&nbsp;<i class="icon-book-open"></i> Liste</a></li>
+                            <li><a href="">&nbsp;&nbsp;<i class="icon-plus"></i> Creer</a></li>
+                            <li><a href="">&nbsp;&nbsp;<i class="icon-book-open"></i> Liste</a></li>
                         </ul>
                     </li>
 
