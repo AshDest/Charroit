@@ -24,7 +24,7 @@
                 <div class="col-12 col-lg-6 mt-3">
                     <div class="card">
                         <div class="card-header">
-                            @if ($updateuser)
+                            @if ($update)
                             <h4 class="card-title">Modifier Type Automobile</h4>
                             @else
                             <h4 class="card-title">Ajouter Type Automobile</h4>
@@ -34,9 +34,9 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12">
-                                        @if ($updateuser)
+                                        @if ($update)
 
-                                        <form wire:submit.prevent="update">
+                                        <form wire:submit.prevent="updates">
                                             <div class="form-group row">
                                                 <label for="designation" class="col-sm-4 col-form-label">Designation</label>
                                                 <div class="col-sm-8">

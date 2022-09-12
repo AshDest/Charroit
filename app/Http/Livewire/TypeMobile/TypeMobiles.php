@@ -18,6 +18,9 @@ class TypeMobiles extends Component
     public $selbypriority = NULL;
 
     public $designation;
+    public $ids;
+
+    public $update=false;
 
     protected $rules = [
         'designation' => 'required',
@@ -39,6 +42,7 @@ class TypeMobiles extends Component
     {
         $this->validateOnly($propertyName);
     }
+
     public function save()
     {
         $this->validate();
@@ -61,6 +65,21 @@ class TypeMobiles extends Component
         }
     }
 
+    public function edit($id){
+        $var = Type_Mobile::find($id);
+        $this->ids = $id;
+        $this->designation = $var->designation;
+    }
+    public function updates(){
+        $this->validate();
+        Type_Mobile::whereId($this->ids)->update([
+            'designation' => ucfirst(trans($this->designation))
+        ]);
+
+        $this->dispatchBrowserEvent('ok', [
+            'message'=>'<b>Succès</b><br/><span style="color: #2d3354; ">Avocat modifié</span>',
+        ]);
+    }
     public function delete()
     {
         $var = Type_Mobile::whereId($this->iddelete)->delete();

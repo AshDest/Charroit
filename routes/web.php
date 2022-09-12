@@ -20,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/type', [App\Http\Controllers\HomeController::class, 'type'])->name('type');
