@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form-row" class="needs-validation" novalidate wire:submit.prevent="save">
+                            <form class="form-row" class="needs-validation" novalidate wire:submit.prevent="update">
                                 @csrf
                                 <div class="form-group col-sm-4 mb-2">
                                     <label for="immatriculation">Immatriculation</label>

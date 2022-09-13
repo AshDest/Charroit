@@ -20,7 +20,7 @@ class ModifyMobile extends Component
     public $intervalle;
 
 
-    public $id;
+    public $ids;
     protected $rules = [
         'immatriculation' => 'required',
         'num_chassis' => 'required',
@@ -64,7 +64,7 @@ class ModifyMobile extends Component
     }
 
     public function mount(){
-        $var = Mobile::find($this->id);
+        $var = Mobile::find($this->ids);
 
         $this->immatriculation = $var->immatriculation;
         $this->num_chassis = $var->num_chassis;
@@ -79,16 +79,15 @@ class ModifyMobile extends Component
     }
     public function update(){
         $this->validate();
-        Mobile::whereId($this->id)->update([
-                'immatriculation' => ucfirst(trans($this->designation)),
-                'num_chassis' => ucfirst(trans($this->designation)),
-                'marque' => ucfirst(trans($this->designation)),
-                'couleur' => ucfirst(trans($this->designation)),
-                'anneefabrication' => $this->anneefabrication,
-                'kilometrage' => $this->kilometrage,
-                'intervalle' => $this->intervalle,
-                'type_id' => $this->type_id,
-                'section_id' => $this->section_id
+        Mobile::whereId($this->ids)->update([
+            'immatriculation' => ucfirst(trans($this->immatriculation)),
+            'num_chassis' => ucfirst(trans($this->num_chassis)),
+            'marque' => ucfirst(trans($this->marque)),
+            'couleur' => ucfirst(trans($this->couleur)),
+            'kilometrage' => $this->kilometrage,
+            'intervalle' => $this->intervalle,
+            'type_id' => $this->type_id,
+            'section_id' => $this->section_id
         ]);
 
         $this->dispatchBrowserEvent('ok', [
@@ -97,8 +96,8 @@ class ModifyMobile extends Component
     }
     public function render()
     {
-        $typemobiles = Type_Mobile::all();
+        $types = Type_Mobile::all();
         $sections = Section::all();
-        return view('livewire.mobile.modify-mobile', ['typemobiles' => $typemobiles], ['sections' => $sections]);
+        return view('livewire.mobile.modify-mobile', ['types' => $types], ['sections' => $sections]);
     }
 }

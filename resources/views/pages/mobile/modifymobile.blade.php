@@ -1,4 +1,4 @@
 @extends('layouts.default', ['title'=>'Modifier Mobile'])
 @section('content')
-@livewire('mobile.mobiles', ['id' => $id])
+@livewire('mobile.modify-mobile', ['ids' => $ids])
 @endsection
