@@ -32,4 +32,8 @@ class HomeController extends Controller
     {
         return view('pages.Type_automobile');
     }
+    public function section()
+    {
+        return view('pages.section');
+    }
 }

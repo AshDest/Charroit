@@ -17,8 +17,50 @@ class Sections extends Component
     public $selbyname = NULL;
     public $selbypriority = NULL;
 
-    public function delete(){
-        $var=Section::whereId($this->iddelete)->delete();
+    public $designation;
+
+    public $updates=false;
+
+    public $search;
+
+    protected $rules = [
+        'designation' => 'required',
+    ];
+
+    protected $messages = [
+        'designation.required' => 'la designation est obligatoire',
+    ];
+
+    // vider les champs
+    public function resetFields()
+    {
+        $this->designation = '';
+    }
+
+    public function save()
+    {
+        $this->validate();
+        try {
+            Section::create([
+                'designation' => ucfirst(trans($this->designation)),
+            ])->save();
+            // Set Flash Message
+            $this->dispatchBrowserEvent('ok', [
+                'message' => '<b>Succès</b><br/><span style="color: #2d3354; ">Section enregistré</span>',
+            ]);
+            $this->resetFields();
+        } catch (\Exception $e) {
+            // Set Flash Message
+            $this->dispatchBrowserEvent('fail', [
+                'message' => "Quelque chose ne va pas lors de l'enregistrement'!! " . $e->getMessage()
+            ]);
+            // Reset Form Fields After Creating departement
+            $this->resetFields();
+        }
+    }
+
+    public function delete($id){
+        $var=Section::whereId($id)->delete();
         if($var){
             $this->dispatchBrowserEvent('ok', [
                 'message'=>'<b>Succès</b><br/><i>Suppresion effectuee</i>',
@@ -32,6 +74,23 @@ class Sections extends Component
         }
     }
 
+    public function edit($id){
+        $this->updates = true;
+        $var = Section::find($id);
+        $this->ids = $id;
+        $this->designation = $var->designation;
+    }
+    public function updates(){
+        $this->validate();
+        Section::whereId($this->ids)->update([
+            'designation' => ucfirst(trans($this->designation))
+        ]);
+        $this->resetFields();
+        $this->dispatchBrowserEvent('ok', [
+            'message'=>'<b>Succès</b><br/><span style="color: #2d3354; ">Section modifié</span>',
+        ]);
+    }
+
     public function alertsupr($id){
         $this->iddelete = $id;
     }
@@ -41,7 +100,17 @@ class Sections extends Component
     }
     public function render()
     {
-        $sections = Section::all();
-        return view('livewire.section.sections', ['sections' => $sections]);
+        return view('livewire.section.sections', [
+            'sections' => Section::where(
+            'designation',
+            'LIKE',
+            '%' . $this->search . '%'
+        )
+            ->orWhere(
+                'id',
+                'LIKE',
+                '%' . $this->search . '%'
+            )
+            ->orderBy('id', 'ASC')->paginate($this->perpage),]);
     }
 }
