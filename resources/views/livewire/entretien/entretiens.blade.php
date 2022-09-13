@@ -62,7 +62,7 @@
                                 <td>{{$entretien->mobile->immatriculation}} - {{$entretien->mobile->marque}} - {{$entretien->mobile->marque}}</td>
                                 <td>{{$entretien->entretien}}</td>
                                 <td>{{$entretien->garage->nomgarage}}</td>
-                                <td>{{$entretien->cout}}</td>
+                                <td>{{$entretien->cout}} $</td>
                                 <td>{{date('d/m/Y', strtotime($entretien->date_entretien))}}</td>
                                 {{-- <td>
                                     <span class="badge outline-badge-warning" data-toggle="tooltip"
