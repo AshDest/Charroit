@@ -13,6 +13,9 @@ class AddMobile extends Component
     public $couleur;
     public $anneefabrication;
     public $kilometrage;
+    // public $rest_km;
+    // public $nbre_entretien;
+    public $intervalle;
     public $type_id;
     public $section_id;
 
@@ -24,8 +27,8 @@ class AddMobile extends Component
         'anneefabrication' => 'required',
         'kilometrage' => 'required',
         'type_id' => 'required',
-        'section_id' => 'required'
-
+        'section_id' => 'required',
+        'intervalle' => 'required'
     ];
 
     protected $messages = [
@@ -36,7 +39,8 @@ class AddMobile extends Component
         'anneefabrication.required' => 'ce Champ est obligatoire',
         'kilometrage.required' => 'ce Champ est obligatoire',
         'type_id.required' => 'ce Champ est obligatoire',
-        'section_id.required' => 'ce Champ est obligatoire'
+        'section_id.required' => 'ce Champ est obligatoire',
+        'intervalle.required' => 'ce Champ est obligatoire'
     ];
 
     // vider les champs
@@ -50,6 +54,7 @@ class AddMobile extends Component
         $this->kilometrage = '';
         $this->type_id = null;
         $this->section_id = null;
+        $this->intervalle = '';
     }
 
 
@@ -69,6 +74,7 @@ class AddMobile extends Component
                 'couleur' => ucfirst(trans($this->designation)),
                 'anneefabrication' => $this->anneefabrication,
                 'kilometrage' => $this->kilometrage,
+                'intervalle' => $this->intervalle,
                 'type_id' => $this->type_id,
                 'section_id' => $this->section_id
             ])->save();

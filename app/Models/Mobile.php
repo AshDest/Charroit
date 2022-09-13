@@ -16,6 +16,9 @@ class Mobile extends Model
         'couleur',
         'anneefabrication',
         'kilometrage',
+        'rest_km',
+        'nbre_entretien',
+        'intervalle',
         'type_id',
         'section_id'
     ];

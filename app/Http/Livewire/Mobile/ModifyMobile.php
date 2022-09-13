@@ -17,6 +17,7 @@ class ModifyMobile extends Component
     public $kilometrage;
     public $type_id;
     public $section_id;
+    public $intervalle;
 
     public $id;
     protected $rules = [
@@ -27,7 +28,8 @@ class ModifyMobile extends Component
         'anneefabrication' => 'required',
         'kilometrage' => 'required',
         'type_id' => 'required',
-        'section_id' => 'required'
+        'section_id' => 'required',
+        'intervalle' => 'required'
 
     ];
 
@@ -41,7 +43,8 @@ class ModifyMobile extends Component
         'anneefabrication.required' => 'ce Champ est obligatoire',
         'kilometrage.required' => 'ce Champ est obligatoire',
         'type_id.required' => 'ce Champ est obligatoire',
-        'section_id.required' => 'ce Champ est obligatoire'
+        'section_id.required' => 'ce Champ est obligatoire',
+        'intervalle.required' => 'ce Champ est obligatoire'
     ];
 
     // vider les champs
@@ -55,6 +58,7 @@ class ModifyMobile extends Component
         $this->kilometrage = '';
         $this->type_id = null;
         $this->section_id = null;
+        $this->intervalle = '';
     }
 
 
@@ -75,18 +79,21 @@ class ModifyMobile extends Component
         $this->kilometrage = $var->kilometrage;
         $this->type_id = $var->type_id;
         $this->section_id = $var->section_id;
+        $this->intervalle = $var->intervalle;
+
     }
     public function update(){
         $this->validate();
         Mobile::whereId($this->id)->update([
-            'immatriculation' => ucfirst(trans($this->designation)),
-            'num_chassis' => ucfirst(trans($this->designation)),
-            'marque' => ucfirst(trans($this->designation)),
-            'couleur' => ucfirst(trans($this->designation)),
-            'anneefabrication' => $this->anneefabrication,
-            'kilometrage' => $this->kilometrage,
-            'type_id' => $this->type_id,
-            'section_id' => $this->section_id
+                'immatriculation' => ucfirst(trans($this->designation)),
+                'num_chassis' => ucfirst(trans($this->designation)),
+                'marque' => ucfirst(trans($this->designation)),
+                'couleur' => ucfirst(trans($this->designation)),
+                'anneefabrication' => $this->anneefabrication,
+                'kilometrage' => $this->kilometrage,
+                'intervalle' => $this->intervalle,
+                'type_id' => $this->type_id,
+                'section_id' => $this->section_id
         ]);
 
         $this->dispatchBrowserEvent('ok', [

@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('couleur');
             $table->string('anneefabrication')->nullable();
             $table->integer('kilometrage');
+            $table->integer('rest_km')->nullable()->default(0);
+            $table->integer('nbre_entretien')->nullable()->default(0);
+            $table->integer('intervalle')->nullable()->default(0);
             $table->unsignedBigInteger('type_id');
             $table->unsignedBigInteger('section_id');
             $table->foreign('type_id')->references('id')->on('type__mobiles')->onDelete('cascade')->onUpdate('cascade');
