@@ -40,4 +40,8 @@ class HomeController extends Controller
     {
         return view('pages.garage');
     }
+    public function mobile()
+    {
+        return view('pages.mobile.mobiles');
+    }
 }

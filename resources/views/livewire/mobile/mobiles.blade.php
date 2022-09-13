@@ -27,7 +27,7 @@
 
 
                             <div class="col-3 my-auto">
-                                <a href="{{route('saveavocat')}}" class="btn btn-haki col-12"><i class="icon-plus"></i>
+                                <a href="" class="btn btn-haki col-12"><i class="icon-plus"></i>
                                     &ensp;&ensp;Enregistrer Mobile</a>
                             </div>
 
@@ -66,29 +66,29 @@
                                 </td>
                                 <td>{{$mobile->immatriculation}}</td>
                                 <td>{{$mobile->typemobile->designation}}</td>
-                                <td>{{$mobile->diplomebase}}</td>
-                                <td>{{$mobile->nom}} - {{$avocat->postnom}} {{$avocat->prenom}}</td>
-                                <td>{{$mobile->genre}}</td>
-                                <td>{{date('d/m/Y', strtotime($avocat->datenaissance))}}</td>
-                                <td>{{$mobile->phone}}</td>
-                                <td>{{$mobile->email}}</td>
-                                <td>{{$mobile->diplomebase}}</td>
-                                <td>
+                                <td>{{$mobile->num_chassis}}</td>
+                                <td>{{$mobile->marque}} - {{$mobile->couleur}} {{$mobile->anneefabrication}}</td>
+                                <td>{{$mobile->kilometrage}}</td>
+                                <td>{{date('d/m/Y', strtotime($mobile->updated_at))}}</td>
+                                <td>{{$mobile->rest_km}}</td>
+                                <td>{{$mobile->nbre_entretien}}</td>
+                                <td>{{$mobile->section->designation}}</td>
+                                {{-- <td>
                                     <span class="badge outline-badge-warning" data-toggle="tooltip"
-                                        data-placement="left" title="Adresse : {{$avocat->adresse}}"
+                                        data-placement="left" title="Adresse : {{$mobile->adresse}}"
                                         style="cursor:pointer;">
                                         <i class="fas fa-info"></i>
                                     </span>
-                                </td>
+                                </td> --}}
                                 <td>
-                                    <a href="/modifyavocat/{{$avocat->id}}" class="badge outline-badge-primary"
+                                    <a href="/modifyavocat/{{$mobile->id}}" class="badge outline-badge-primary"
                                         data-toggle="tooltip" data-placement="top" title="Modifier avocat"
                                         style="cursor:pointer;">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                 </td>
                                 <td>
-                                    <span class="badge outline-badge-danger" wire:click="alertsupr({{$avocat->id}})"
+                                    <span class="badge outline-badge-danger" wire:click="alertsupr({{$mobile->id}})"
                                         data-toggle="tooltip" data-placement="top" title="Supprimer avocat"
                                         style="cursor:pointer;">
                                         <i class="fas fa-trash-alt"></i>
@@ -114,7 +114,7 @@
                     @if (!is_null($iddelete))
                     <div class="alert alert-secondary alert-dismissible fade show" role="alert">
                         <strong style="font-size: 14px; ">Message de confirmation !</strong> <br />
-                        Voulez vous vraiment supprimer cet avocat ?&emsp;&ensp;
+                        Voulez vous vraiment supprimer cette Information ?&emsp;&ensp;
                         <a class="btn btn-outline-primary" wire:click="deleteavocat()">
                             <span onMouseOver="this.style.color='white'" onMouseOut="this.style.color='black'">Confirmer
                                 suppression
@@ -128,17 +128,17 @@
 
 
 
-                    @if( count($avocats) > 0 )
+                    @if( count($mobiles) > 0 )
                     <div class="row">
                         <div class="col-sm-3"></div>
                         <div class="col-sm-3 text-center">
-                            {{ $avocats->links('vendor.livewire.bootstrap') }}
+                            {{ $mobiles->links('vendor.livewire.bootstrap') }}
                         </div>
                         <div class="col-sm-6 text-center">
-                            Affichage de <span style="color:#151e52; ">{{$avocats->firstItem()}}</span>
-                            à <b style="color:#7781a6; ">{{$avocats->lastItem()}}</b> sur
-                            <b style="color:#7781a6; ">{{$avocats->currentPage()}}</b></span>
-                            (<b style="color:#7781a6; ">{{$avocats->lastPage()}}</b> {{ Str::plural('page',
+                            Affichage de <span style="color:#151e52; ">{{$mobiles->firstItem()}}</span>
+                            à <b style="color:#7781a6; ">{{$mobiles->lastItem()}}</b> sur
+                            <b style="color:#7781a6; ">{{$mobiles->currentPage()}}</b></span>
+                            (<b style="color:#7781a6; ">{{$mobiles->lastPage()}}</b> {{ Str::plural('page',
                             $avocats->count()) }})&ensp;&ensp;
                         </div>
                     </div>

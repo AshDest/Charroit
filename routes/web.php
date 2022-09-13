@@ -23,3 +23,4 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('in
 Route::get('/type', [App\Http\Controllers\HomeController::class, 'type'])->name('type');
 Route::get('/section', [App\Http\Controllers\HomeController::class, 'section'])->name('section');
 Route::get('/garage', [App\Http\Controllers\HomeController::class, 'garage'])->name('garage');
+Route::get('/mobiles', [App\Http\Controllers\HomeController::class, 'mobile'])->name('mobile');
