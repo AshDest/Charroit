@@ -28,7 +28,7 @@ class Mobiles extends Component
             ]);
             $refresh;
         }else{
-            $this->dispatchBrowserEvent('ok', [
+            $this->dispatchBrowserEvent('fail', [
                 'message'=>'<b>Désoler</b><br/><i>Echèc de suppression</i>',
             ]);
             $refresh;

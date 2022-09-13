@@ -4,7 +4,7 @@
             <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
                     <div class="card-header  justify-content-between align-items-center"
-                        style="background-color: #fcc7b1; ">
+                        style="background-color: #2ba3b3; ">
                         <h6 class="card-title">Liste Automobile</h6>
                     </div>
                     <div class="card-header  justify-content-between align-items-center">
@@ -36,19 +36,18 @@
                     <div class="card-body table-responsive p-0">
 
                         <table class="table  mb-0">
-                            <thead style="background-color: #fcc7b1; ">
+                            <thead style="background-color: #9dced4; ">
                                 <tr>
                                     <th>ID</th>
-                                    <th>Immatriculation</th>
-                                    <th>Type Véhicule</th>
-                                    <th>N° Chassis</th>
-                                    <th>Marque</th>
-                                    <th>Couleur</th>
-                                    <th>Année Fab</th>
-                                    <th>Km Parcouru</th>
-                                    <th>Km Restants</th>
-                                    <th>Dernière Entretien</th>
-                                    <th>Section</th>
+                                    <th>IMMATRICULATION</th>
+                                    <th>TYPE MOBILE</th>
+                                    <th>N° CHASSIS</th>
+                                    <th>DETAILS</th>
+                                    <th>Km PARCOURUS</th>
+                                    <th>Km RESTANT</th>
+                                    <th>Nbre ENTRETIENS</th>
+                                    <th>DERNIERE ENTRETIEN</th>
+                                    <th>SECTION AFFECTATIION</th>
                                     <th></th>
                                     <th></th>
                                     <th style="cursor:pointer;" wire:click="reload()">
@@ -69,9 +68,9 @@
                                 <td>{{$mobile->num_chassis}}</td>
                                 <td>{{$mobile->marque}} - {{$mobile->couleur}} {{$mobile->anneefabrication}}</td>
                                 <td>{{$mobile->kilometrage}}</td>
-                                <td>{{date('d/m/Y', strtotime($mobile->updated_at))}}</td>
                                 <td>{{$mobile->rest_km}}</td>
                                 <td>{{$mobile->nbre_entretien}}</td>
+                                <td>{{date('d/m/Y', strtotime($mobile->updated_at))}}</td>
                                 <td>{{$mobile->section->designation}}</td>
                                 {{-- <td>
                                     <span class="badge outline-badge-warning" data-toggle="tooltip"
@@ -81,15 +80,15 @@
                                     </span>
                                 </td> --}}
                                 <td>
-                                    <a href="/modifyavocat/{{$mobile->id}}" class="badge outline-badge-primary"
-                                        data-toggle="tooltip" data-placement="top" title="Modifier avocat"
+                                    <a href="/modifymobile/{{$mobile->id}}" class="badge outline-badge-primary"
+                                        data-toggle="tooltip" data-placement="top" title="Modifier mobile"
                                         style="cursor:pointer;">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                 </td>
                                 <td>
                                     <span class="badge outline-badge-danger" wire:click="alertsupr({{$mobile->id}})"
-                                        data-toggle="tooltip" data-placement="top" title="Supprimer avocat"
+                                        data-toggle="tooltip" data-placement="top" title="Supprimer mobile"
                                         style="cursor:pointer;">
                                         <i class="fas fa-trash-alt"></i>
                                     </span>
@@ -139,7 +138,7 @@
                             à <b style="color:#7781a6; ">{{$mobiles->lastItem()}}</b> sur
                             <b style="color:#7781a6; ">{{$mobiles->currentPage()}}</b></span>
                             (<b style="color:#7781a6; ">{{$mobiles->lastPage()}}</b> {{ Str::plural('page',
-                            $avocats->count()) }})&ensp;&ensp;
+                            $mobiles->count()) }})&ensp;&ensp;
                         </div>
                     </div>
                     @endif

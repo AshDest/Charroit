@@ -25,3 +25,4 @@ Route::get('/section', [App\Http\Controllers\HomeController::class, 'section'])-
 Route::get('/garage', [App\Http\Controllers\HomeController::class, 'garage'])->name('garage');
 Route::get('/mobiles', [App\Http\Controllers\HomeController::class, 'mobile'])->name('mobile');
 Route::get('/addmobiles', [App\Http\Controllers\HomeController::class, 'addmobile'])->name('addmobile');
+Route::get('/modifymobile/{id}', [App\Http\Controllers\HomeController::class, 'modifymobile'])->name('modifymobile');

@@ -19,28 +19,24 @@ class ModifyMobile extends Component
     public $section_id;
     public $intervalle;
 
+
     public $id;
     protected $rules = [
         'immatriculation' => 'required',
         'num_chassis' => 'required',
         'marque' => 'required',
         'couleur' => 'required',
-        'anneefabrication' => 'required',
         'kilometrage' => 'required',
         'type_id' => 'required',
         'section_id' => 'required',
         'intervalle' => 'required'
-
     ];
 
     protected $messages = [
-        'designation.required' => 'ce Champ est obligatoire',
-
         'immatriculation.required' => 'ce Champ est obligatoire',
         'num_chassis.required' => 'ce Champ est obligatoire',
         'marque.required' => 'ce Champ est obligatoire',
         'couleur.required' => 'ce Champ est obligatoire',
-        'anneefabrication.required' => 'ce Champ est obligatoire',
         'kilometrage.required' => 'ce Champ est obligatoire',
         'type_id.required' => 'ce Champ est obligatoire',
         'section_id.required' => 'ce Champ est obligatoire',
@@ -54,7 +50,6 @@ class ModifyMobile extends Component
         $this->num_chassis = '';
         $this->marque = '';
         $this->couleur = '';
-        $this->anneefabrication = '';
         $this->kilometrage = '';
         $this->type_id = null;
         $this->section_id = null;

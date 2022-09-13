@@ -48,4 +48,9 @@ class HomeController extends Controller
     {
         return view('pages.mobile.addmobile');
     }
+
+    public function modifymobile($id)
+    {
+        return view('pages.mobile.modifymobile', compact('id'));
+    }
 }

@@ -64,7 +64,6 @@ class AddMobile extends Component
     }
     public function save()
     {
-        // dd('dest');
         $this->validate();
         try {
             Mobile::create([
@@ -85,7 +84,7 @@ class AddMobile extends Component
         } catch (\Exception $e) {
             // Set Flash Message
             $this->dispatchBrowserEvent('fail', [
-                'message' => "Quelque chose ne va pas lors de l'enregistrement du Client'!! " . $e->getMessage()
+                'message' => "Quelque chose ne va pas lors de l'enregistrement'!! " . $e->getMessage()
             ]);
             // Reset Form Fields After Creating departement
             $this->resetFields();
