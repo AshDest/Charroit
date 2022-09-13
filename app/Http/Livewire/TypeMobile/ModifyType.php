@@ -35,7 +35,7 @@ class ModifyType extends Component
         $var = Type_Mobile::find($this->id);
         $this->designation = $var->designation;
     }
-    public function update(){
+    public function updates(){
         $this->validate();
         Type_Mobile::whereId($this->id)->update([
             'designation' => ucfirst(trans($this->designation))

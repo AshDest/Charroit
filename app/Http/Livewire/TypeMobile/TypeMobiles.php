@@ -20,7 +20,9 @@ class TypeMobiles extends Component
     public $designation;
     public $ids, $page_active;
 
-    public $update=false;
+    public $updates=false;
+
+    public $search;
 
     protected $rules = [
         'designation' => 'required',
@@ -66,6 +68,7 @@ class TypeMobiles extends Component
     }
 
     public function edit($id){
+        $this->updates = true;
         $var = Type_Mobile::find($id);
         $this->ids = $id;
         $this->designation = $var->designation;
@@ -80,9 +83,9 @@ class TypeMobiles extends Component
             'message'=>'<b>Succès</b><br/><span style="color: #2d3354; ">Avocat modifié</span>',
         ]);
     }
-    public function delete()
+    public function delete($id)
     {
-        $var = Type_Mobile::whereId($this->iddelete)->delete();
+        $var = Type_Mobile::whereId($id)->delete();
         if ($var) {
             $this->dispatchBrowserEvent('ok', [
                 'message' => '<b>Succès</b><br/><i>Suppresion effectuee</i>',
@@ -107,7 +110,17 @@ class TypeMobiles extends Component
     }
     public function render()
     {
-        $typesmobiles = Type_Mobile::all()->paginate($this->page_active);
-        return view('livewire.type-mobile.type-mobiles', ['typesmobiles' => $typesmobiles]);
+        return view('livewire.type-mobile.type-mobiles', [
+            'typesmobiles' => Type_Mobile::where(
+            'designation',
+            'LIKE',
+            '%' . $this->search . '%'
+        )
+            ->orWhere(
+                'id',
+                'LIKE',
+                '%' . $this->search . '%'
+            )
+            ->orderBy('id', 'ASC')->paginate($this->perpage),]);
     }
 }
