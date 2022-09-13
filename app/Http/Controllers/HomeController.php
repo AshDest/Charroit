@@ -44,4 +44,8 @@ class HomeController extends Controller
     {
         return view('pages.mobile.mobiles');
     }
+    public function addmobile()
+    {
+        return view('pages.mobile.addmobile');
+    }
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Mobile;
 
 use App\Models\Mobile;
+use App\Models\Section;
+use App\Models\Type_Mobile;
 use Livewire\Component;
 
 class AddMobile extends Component
@@ -24,7 +26,6 @@ class AddMobile extends Component
         'num_chassis' => 'required',
         'marque' => 'required',
         'couleur' => 'required',
-        'anneefabrication' => 'required',
         'kilometrage' => 'required',
         'type_id' => 'required',
         'section_id' => 'required',
@@ -36,7 +37,6 @@ class AddMobile extends Component
         'num_chassis.required' => 'ce Champ est obligatoire',
         'marque.required' => 'ce Champ est obligatoire',
         'couleur.required' => 'ce Champ est obligatoire',
-        'anneefabrication.required' => 'ce Champ est obligatoire',
         'kilometrage.required' => 'ce Champ est obligatoire',
         'type_id.required' => 'ce Champ est obligatoire',
         'section_id.required' => 'ce Champ est obligatoire',
@@ -50,7 +50,6 @@ class AddMobile extends Component
         $this->num_chassis = '';
         $this->marque = '';
         $this->couleur = '';
-        $this->anneefabrication = '';
         $this->kilometrage = '';
         $this->type_id = null;
         $this->section_id = null;
@@ -65,14 +64,14 @@ class AddMobile extends Component
     }
     public function save()
     {
+        // dd('dest');
         $this->validate();
         try {
             Mobile::create([
-                'immatriculation' => ucfirst(trans($this->designation)),
-                'num_chassis' => ucfirst(trans($this->designation)),
-                'marque' => ucfirst(trans($this->designation)),
-                'couleur' => ucfirst(trans($this->designation)),
-                'anneefabrication' => $this->anneefabrication,
+                'immatriculation' => ucfirst(trans($this->immatriculation)),
+                'num_chassis' => ucfirst(trans($this->num_chassis)),
+                'marque' => ucfirst(trans($this->marque)),
+                'couleur' => ucfirst(trans($this->couleur)),
                 'kilometrage' => $this->kilometrage,
                 'intervalle' => $this->intervalle,
                 'type_id' => $this->type_id,
@@ -94,6 +93,8 @@ class AddMobile extends Component
     }
     public function render()
     {
-        return view('livewire.mobile.add-mobile');
+        $sections = Section::all();
+        $types = Type_Mobile::all();
+        return view('livewire.mobile.add-mobile', ['sections' => $sections], ['types' => $types]);
     }
 }
