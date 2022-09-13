@@ -27,8 +27,8 @@
 
 
                             <div class="col-3 my-auto">
-                                <a href="/addmobiles" class="btn btn-haki col-12"><i class="icon-plus"></i>
-                                    &ensp;&ensp;Enregistrer Mobile</a>
+                                <a href="/addentretien" class="btn btn-primary col-12"><i class="icon-plus"></i>
+                                    &ensp;&ensp;Enregistrer Entretien</a>
                             </div>
 
                         </div>

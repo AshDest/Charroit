@@ -41,7 +41,9 @@ class Entretiens extends Component
     }
     public function render()
     {
-        $entretiens = Entretien::all();
-        return view('livewire.entretien.entretiens', ['entretiens' => $entretiens]);
+        return view('livewire.entretien.entretiens', [
+            'entretiens' => Entretien::orderBy('created_at', 'DESC')
+                            ->paginate($this->perpage),
+        ]);
     }
 }

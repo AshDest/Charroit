@@ -51,7 +51,6 @@ class AddEntretien extends Component
         $this->validate();
         try {
             Entretien::create([
-                'immatriculation' => $this->designation,
                 'garage_id' => $this->garage_id,
                 'mobile_id' => $this->mobile_id,
                 'date_entretien' => $this->date_entretien,
@@ -66,7 +65,7 @@ class AddEntretien extends Component
         } catch (\Exception $e) {
             // Set Flash Message
             $this->dispatchBrowserEvent('fail', [
-                'message' => "Quelque chose ne va pas lors de l'enregistrement du Client'!! " . $e->getMessage()
+                'message' => "Quelque chose ne va pas lors de l'enregistrement'!! " . $e->getMessage()
             ]);
             // Reset Form Fields After Creating departement
             $this->resetFields();
