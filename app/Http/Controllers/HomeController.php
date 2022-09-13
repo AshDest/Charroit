@@ -53,4 +53,19 @@ class HomeController extends Controller
     {
         return view('pages.mobile.modifymobile', compact('ids'));
     }
+
+    public function entretien()
+    {
+        return view('pages.entretien.entretien');
+    }
+
+    public function addentretien()
+    {
+        return view('pages.entretien.addentretien');
+    }
+
+    public function modifyentretien($ids)
+    {
+        return view('pages.entretien.modifyentretien', compact('ids'));
+    }
 }

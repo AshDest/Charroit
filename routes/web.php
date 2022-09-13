@@ -23,6 +23,12 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('in
 Route::get('/type', [App\Http\Controllers\HomeController::class, 'type'])->name('type');
 Route::get('/section', [App\Http\Controllers\HomeController::class, 'section'])->name('section');
 Route::get('/garage', [App\Http\Controllers\HomeController::class, 'garage'])->name('garage');
+
 Route::get('/mobiles', [App\Http\Controllers\HomeController::class, 'mobile'])->name('mobile');
 Route::get('/addmobiles', [App\Http\Controllers\HomeController::class, 'addmobile'])->name('addmobile');
 Route::get('/modifymobile/{ids}', [App\Http\Controllers\HomeController::class, 'modifymobile'])->name('modifymobile');
+
+
+Route::get('/entretien', [App\Http\Controllers\HomeController::class, 'entretien'])->name('entretien');
+Route::get('/addentretien', [App\Http\Controllers\HomeController::class, 'addentretien'])->name('addentretien');
+Route::get('/modifyentretien/{ids}', [App\Http\Controllers\HomeController::class, 'modifyentretien'])->name('modifyentretien');
