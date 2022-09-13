@@ -12,36 +12,6 @@
                                 <span>Cabinet</span></a>
 
                             </li>
-                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
-                                <span>Categorie client</span></a>
-
-                            </li>
-                            {{-- <li><a href="{{route('type')}}">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
-                                <span>Type client</span></a> --}}
-
-                            </li>
-                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
-                                <span>Departement</span></a>
-
-                            </li>
-                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
-                                <span>Instance</span></a>
-
-                            </li>
-                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
-                                <span>Matiere</span></a>
-
-                            </li>
-
-                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
-                                <span>Avocat</span></a>
-                            </li>
-                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
-                                <span>Spécialité</span></a>
-                            </li>
-                            <li><a href="">&nbsp;&nbsp;<i class="fas fa-biohazard"></i>
-                                <span>Affectation Spécialite</span></a>
-                            </li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#">
@@ -58,34 +28,6 @@
                         <ul>
                             <li><a href="/saveclient">&nbsp;&nbsp;<i class="fas fa-user-plus"></i> Creer</a></li>
                             <li><a href="/listclient">&nbsp;&nbsp;<i class="icon-book-open"></i> Liste</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown"><a href="#">
-                        <i class="icon-layers mr-1" style="color: #EF8354; "></i>
-                        <span class="colorText">Dossier</span></a>
-                        <ul>
-                            <li><a href="">&nbsp;&nbsp;<i class="icon-plus"></i> Creer</a></li>
-                            <li><a href="">&nbsp;&nbsp;<i class="icon-book-open"></i> Liste</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown"><a href="#">
-                        <i class="fas fa-donate mr-1" style="color: #EF8354; "></i>
-                        <span class="colorText">Paiements</span></a>
-                        <ul>
-                            <li><a href="#">&nbsp;&nbsp;<i class="fas fa-donate"></i> Saisir</a></li>
-                            <li><a href="#">&nbsp;&nbsp;<i class="icon-book-open"></i> Liste</a></li>
-                            <li><a href="#">&nbsp;&nbsp;<i class="fab fa-accusoft"></i> Facture</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown"><a href="#">
-                        <i class="icon-layers mr-1" style="color: #EF8354; "></i>
-                        <span class="colorText">Caisse</span></a>
-                        <ul>
-                            <li><a href="#">&nbsp;&nbsp;<i class="icon-tag"></i> Rapport</a></li>
-                            <li><a href="#">&nbsp;&nbsp;<i class="icon-book-open"></i> Autre rapport</a></li>
                         </ul>
                     </li>
 
