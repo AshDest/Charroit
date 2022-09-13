@@ -15,7 +15,7 @@ class ModifyEntretien extends Component
     public $entretien;
     public $cout;
 
-    public $id;
+    public $ids;
 
     protected $rules = [
         'garage_id' => 'required',
@@ -48,7 +48,7 @@ class ModifyEntretien extends Component
         $this->validateOnly($propertyName);
     }
     public function mount(){
-        $var = Entretien::find($this->id);
+        $var = Entretien::find($this->ids);
 
         $this->garage_id = $var->garage_id;
         $this->mobile_id = $var->mobile_id;
@@ -59,8 +59,7 @@ class ModifyEntretien extends Component
 
     public function update(){
         $this->validate();
-        Entretien::whereId($this->id)->update([
-            'immatriculation' => $this->designation,
+        Entretien::whereId($this->ids)->update([
             'garage_id' => $this->garage_id,
             'mobile_id' => $this->mobile_id,
             'date_entretien' => $this->date_entretien,
