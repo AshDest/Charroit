@@ -68,4 +68,8 @@ class HomeController extends Controller
     {
         return view('pages.entretien.modifyentretien', compact('ids'));
     }
+
+    public function user(){
+        return view('pages.user');
+    }
 }

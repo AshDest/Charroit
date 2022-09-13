@@ -32,3 +32,6 @@ Route::get('/modifymobile/{ids}', [App\Http\Controllers\HomeController::class, '
 Route::get('/entretien', [App\Http\Controllers\HomeController::class, 'entretien'])->name('entretien');
 Route::get('/addentretien', [App\Http\Controllers\HomeController::class, 'addentretien'])->name('addentretien');
 Route::get('/modifyentretien/{ids}', [App\Http\Controllers\HomeController::class, 'modifyentretien'])->name('modifyentretien');
+
+Route::get('/user', [App\Http\Controllers\HomeController::class, 'user'])->name('user');
+
