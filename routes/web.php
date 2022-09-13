@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/type', [App\Http\Controllers\HomeController::class, 'type'])->name('type');
 Route::get('/section', [App\Http\Controllers\HomeController::class, 'section'])->name('section');
+Route::get('/garage', [App\Http\Controllers\HomeController::class, 'garage'])->name('garage');

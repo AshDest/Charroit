@@ -36,4 +36,8 @@ class HomeController extends Controller
     {
         return view('pages.section');
     }
+    public function garage()
+    {
+        return view('pages.garage');
+    }
 }

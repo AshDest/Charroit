@@ -113,9 +113,9 @@ class Garages extends Component
         $refresh;
     }
 
-    public function reload(){
-        $refresh;
-    }
+    // public function reload(){
+    //     $refresh;
+    // }
     public function render()
     {
         return view('livewire.garage.garages', [
