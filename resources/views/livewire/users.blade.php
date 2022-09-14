@@ -62,50 +62,6 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label  class="col-sm-4 col-form-label">Photo</label>
-                                                    <div class="col-sm-8">
-                                                        @if (!$logo)
-                                                            <input type="file" wire:model="logo"
-                                                                class="form-control @error('logo') is-invalid @enderror"
-                                                                id="logo">
-                                                        @endif
-
-                                                        @if ($logo)
-                                                            <img src="{{ $logo->temporaryUrl() }}"
-                                                                style="height: 40px; border-radius: 4px; ">
-                                                                &nbsp;&nbsp;
-                                                                <div class="tooltipcabinet">
-                                                                    <a wire:click.prevent="resetphoto"
-                                                                     style="cursor:pointer;">
-                                                                    <i class="fas fa-redo mr-1" style="color: #EF8354;"></i>
-                                                                </a>
-                                                                    <span class="tooltiptextcabinet">Recharger la photo</span>
-                                                                  </div>
-
-                                                        @endif
-
-                                                        <div wire:loading wire:target="logo" style="color: #2f8045; ">
-                                                            Uploading <img
-                                                                src="{{ asset('dist/downloaded/load.png') }}"
-                                                                width="14" />
-                                                        </div>
-
-                                                        @error('logo')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="username" class="col-sm-4 col-form-label">Photo Actuelle</label>
-                                                    <div class="col-sm-8">
-
-                                                            <img src="{{asset('dist/images/userpicture/'.$this->lienlogo.'')}}" style="height: 40px; border-radius: 4px; ">
-
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
                                                     <div class="col-sm-10">
                                                         <button type="submit" class="btn btn-primary">
                                                             <span class="icon-plus"></span> Modifier l'utilisateur</button>
@@ -163,42 +119,6 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label  class="col-sm-4 col-form-label">Logo</label>
-                                                    <div class="col-sm-8">
-                                                        @if (!$logo)
-                                                            <input type="file" wire:model="logo"
-                                                                class="form-control @error('logo') is-invalid @enderror"
-                                                                id="logo">
-                                                        @endif
-
-                                                        @if ($logo)
-                                                            <img src="{{ $logo->temporaryUrl() }}"
-                                                                style="height: 40px; border-radius: 4px; ">
-                                                                &nbsp;&nbsp;
-                                                                <div class="tooltipcabinet">
-                                                                    <a wire:click.prevent="resetphoto"
-                                                                     style="cursor:pointer;">
-                                                                    <i class="fas fa-redo mr-1" style="color: #EF8354;"></i>
-                                                                </a>
-                                                                    <span class="tooltiptextcabinet">Recharger la photo</span>
-                                                                  </div>
-
-                                                        @endif
-
-                                                        <div wire:loading wire:target="logo" style="color: #2f8045; ">
-                                                            Uploading <img
-                                                                src="{{ asset('dist/downloaded/load.png') }}"
-                                                                width="14" />
-                                                        </div>
-
-                                                        @error('logo')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
                                                     <div class="col-sm-10">
                                                         <button type="submit" class="btn btn-primary">
                                                             <span class="icon-plus"></span> Enregistrer</button>
@@ -239,7 +159,7 @@
                                             <th scope="col">ID</th>
                                             <th scope="col">Username</th>
                                             {{-- <th scope="col">Accès</th> --}}
-                                            <th scope="col">Photo</th>
+                                            <th scope="col">Email</th>
                                             <th scope="col">Modifier</th>
                                             <th scope="col">Suprimer</th>
                                         </tr>
@@ -249,9 +169,7 @@
                                         <tr>
                                             <th scope="row">{{$key+1}}</th>
                                             <td>{{ $user->name }}</td>
-                                            {{-- <td>{{ $user->niveauacce->niveau }}</td> --}}
-                                            <td> <img src="dist/images/userpicture/{{$user->avatar}}"
-                                                style="height: 20px; border-radius: 4px; "></td>
+                                            <td>{{ $user->email }}</td>
                                             <td>
                                                 <button
                                                     class="btn btn-primary btn-sm"  wire:click="edit({{ $user->id }})">
