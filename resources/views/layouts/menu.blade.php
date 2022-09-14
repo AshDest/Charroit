@@ -18,7 +18,7 @@
                         <i class="fas fa-users mr-1" style="color: #9dced4; "></i>
                         <span class="colorText">Prelevement</span></a>
                         <ul>
-                            <li><a href="/saveclient">&nbsp;&nbsp;<i class="fas fa-user-plus"></i>Ajouter</a></li>
+                            <li><a href="/addprelevement">&nbsp;&nbsp;<i class="fas fa-user-plus"></i>Ajouter</a></li>
                             <li><a href="/prelevement">&nbsp;&nbsp;<i class="icon-book-open"></i>Liste</a></li>
                         </ul>
                     </li>

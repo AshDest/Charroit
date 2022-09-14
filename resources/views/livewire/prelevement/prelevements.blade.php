@@ -27,7 +27,7 @@
 
 
                             <div class="col-3 my-auto">
-                                <a href="/addentretien" class="btn btn-primary col-12"><i class="icon-plus"></i>
+                                <a href="/addprelevement" class="btn btn-primary col-12"><i class="icon-plus"></i>
                                     &ensp;&ensp;Enregistrer Prelevement</a>
                             </div>
 
@@ -57,8 +57,8 @@
                                 <td>
                                     <?php echo $i.''.$alert; $i++; ?>
                                 </td>
-                                <td>{{$prelevement->mobile->immatriculation}} - {{$prelevement->mobile->marque}} - {{$prelevement->mobile->marque}}</td>
-                                <td>{{$prelevement->mobile->kilometrage}}</td>
+                                <td>{{$prelevement->mobile->immatriculation}} - {{$prelevement->mobile->marque}} - {{$prelevement->mobile->couleur}}</td>
+                                <td>{{$prelevement->mobile->kilometrage}} km</td>
                                 <td>{{date('d/m/Y', strtotime($prelevement->dateprelevement))}}</td>
                                 <td>
                                     <a href="/modifyprelevement/{{$prelevement->id}}" class="badge outline-badge-primary"
