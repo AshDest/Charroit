@@ -147,6 +147,10 @@ class Users extends Component
     }
     public function render()
     {
-        return view('livewire.users');
+        return view('livewire.users', [
+            'users' => Us::where('name','LIKE','%' . $this->user_reseach . '%')
+            ->orWhere( 'id','LIKE','%' . $this->user_reseach . '%')
+            ->orderBy('id', 'ASC')->paginate($this->page_active),
+        ]);
     }
 }

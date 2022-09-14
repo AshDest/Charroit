@@ -280,12 +280,7 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
-
-
             </div>
             <!-- END: Card DATA-->
         </div>
