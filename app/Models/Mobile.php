@@ -31,4 +31,13 @@ class Mobile extends Model
     {
         return $this->belongsTo(Type_Mobile::class, 'type_id');
     }
+    public function entretien()
+    {
+        return $this->hasMany(Entretien::class);
+    }
+
+    public function prelevement()
+    {
+        return $this->hasMany(Prelevement::class);
+    }
 }
