@@ -33,5 +33,9 @@ Route::get('/entretien', [App\Http\Controllers\HomeController::class, 'entretien
 Route::get('/addentretien', [App\Http\Controllers\HomeController::class, 'addentretien'])->name('addentretien');
 Route::get('/modifyentretien/{ids}', [App\Http\Controllers\HomeController::class, 'modifyentretien'])->name('modifyentretien');
 
+Route::get('/prelevement', [App\Http\Controllers\HomeController::class, 'prelevement'])->name('entretien');
+Route::get('/addprelevement', [App\Http\Controllers\HomeController::class, 'addprelevement'])->name('addprelevement');
+Route::get('/modifyprelevement/{ids}', [App\Http\Controllers\HomeController::class, 'modifyprelevement'])->name('modifyprelevement');
+
 Route::get('/user', [App\Http\Controllers\HomeController::class, 'user'])->name('user');
 

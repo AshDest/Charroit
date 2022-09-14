@@ -72,4 +72,18 @@ class HomeController extends Controller
     public function user(){
         return view('pages.user');
     }
+
+    public function prelevement()
+    {
+        return view('pages.prelevement.prelevement');
+    }
+    public function addprelevement()
+    {
+        return view('pages.prelevement.addprelevement');
+    }
+    public function modifyprelevement($ids)
+    {
+        return view('pages.prelevement.modifyprelevement', compact('ids'));
+    }
+
 }
