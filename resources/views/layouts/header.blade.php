@@ -38,48 +38,13 @@
                                 </span> </span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right border   py-0">
-                            <li>
-                                <a class="dropdown-item px-2 py-2 border border-top-0 border-left-0 border-right-0"
-                                    href="#">
-                                    <div class="media">
-                                        <img src="{{asset('dist/images/user.png')}}" alt=""
-                                            class="d-flex mr-3 img-fluid rounded-circle w-50">
-                                        <div class="media-body">
-                                            <p class="mb-0 text-success">john send a message</p>
-                                            12 min ago
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item px-2 py-2 border border-top-0 border-left-0 border-right-0"
-                                    href="#">
-                                    <div class="media">
-                                        <img src="{{asset('dist/images/user.png')}}" alt=""
-                                            class="d-flex mr-3 img-fluid rounded-circle">
-                                        <div class="media-body">
-                                            <p class="mb-0 text-danger">Peter send a message</p>
-                                            15 min ago
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item px-2 py-2 border border-top-0 border-left-0 border-right-0"
-                                    href="#">
-                                    <div class="media">
-                                        <img src="{{asset('dist/images/user.png')}}" alt=""
-                                            class="d-flex mr-3 img-fluid rounded-circle">
-                                        <div class="media-body">
-                                            <p class="mb-0 text-warning">Bill send a message</p>
-                                            5 min ago
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li><a class="dropdown-item text-center py-2" href="#"> Read All Message <i
-                                        class="icon-arrow-right pl-2 small"></i></a></li>
+                            <a href="/garage" class="dropdown-item px-2 align-self-center d-flex">
+                                <span class="icon-support mr-2 h6 mb-0"></span> Garages</a>
+                            <a href="/section" class="dropdown-item px-2 align-self-center d-flex">
+                                <span class="icon-support mr-2 h6 mb-0"></span> Section</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/type" class="dropdown-item px-2 align-self-center d-flex">
+                                <span class="icon-support mr-2 h6  mb-0"></span> Type Mobile</a>
                         </ul>
                     </li>
                     <li class="dropdown user-profile align-self-center d-inline-block">
