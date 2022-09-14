@@ -198,7 +198,7 @@
                  // window.location.reload(true);
                  toastr.success(event.detail.message);
                  setTimeout(function () {
-                window.location.href = "/add-cabinet"; //will redirect to your blog page (an ex: blog.html)
+                window.location.href = "/user"; //will redirect to your blog page (an ex: blog.html)
             }, 6000);
         });
 

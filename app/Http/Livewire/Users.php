@@ -90,7 +90,7 @@ class Users extends Component
                     'password' => $this->password,
                 ])->save();
                 // Set Flash Message
-                $this->dispatchBrowserEvent('ok', [
+                $this->dispatchBrowserEvent('alertsuccess', [
                     'message' => "Modification enregistrée!!"
                 ]);
                 // return redirect('users');
