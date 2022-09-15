@@ -67,9 +67,15 @@
                                 <td>{{$mobile->typemobile->designation}}</td>
                                 <td>{{$mobile->num_chassis}}</td>
                                 <td>{{$mobile->marque}} - {{$mobile->couleur}} {{$mobile->anneefabrication}}</td>
-                                <td>{{$mobile->kilometrage}}</td>
-                                <td>{{$mobile->rest_km}}</td>
-                                <td>{{$mobile->nbre_entretien}}</td>
+                                <td>{{$mobile->kilometrage}} km</td>
+                                @if ($mobile->rest_km < 100)
+                                    <td class="text-danger">{{$mobile->rest_km}} km</td>
+                                @elseif ($mobile->rest_km > 100 && $mobile->rest_km < 800)
+                                    <td class="text-warning">{{$mobile->rest_km}} km</td>
+                                @else
+                                    <td class="text-success">{{$mobile->rest_km}} km</td>
+                                @endif
+                                <td>{{$mobile->nbre_entretien}} fois</td>
                                 <td>{{date('d/m/Y', strtotime($mobile->updated_at))}}</td>
                                 <td>{{$mobile->section->designation}}</td>
                                 {{-- <td>

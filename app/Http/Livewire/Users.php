@@ -8,6 +8,7 @@ use Livewire\WithFileUploads;
 use Intervention\Image\ImageManager;
 use App\Models\User as Us;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class Users extends Component
 {
@@ -48,7 +49,7 @@ class Users extends Component
         Us::create([
             'name' => $this->username,
             'email' => $this->email,
-            'password' => $this->password,
+            'password' => Hash::make($this->password),
         ]);
 
         $this->dispatchBrowserEvent('alertsuccess', [

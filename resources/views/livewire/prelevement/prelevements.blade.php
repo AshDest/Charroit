@@ -58,7 +58,7 @@
                                     <?php echo $i.''.$alert; $i++; ?>
                                 </td>
                                 <td>{{$prelevement->mobile->immatriculation}} - {{$prelevement->mobile->marque}} - {{$prelevement->mobile->couleur}}</td>
-                                <td>{{$prelevement->mobile->kilometrage}} km</td>
+                                <td>{{$prelevement->kilometre}} km</td>
                                 <td>{{date('d/m/Y', strtotime($prelevement->dateprelevement))}}</td>
                                 <td>
                                     <a href="/modifyprelevement/{{$prelevement->id}}" class="badge outline-badge-primary"
