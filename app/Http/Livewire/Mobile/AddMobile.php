@@ -72,6 +72,7 @@ class AddMobile extends Component
                 'marque' => ucfirst(trans($this->marque)),
                 'couleur' => ucfirst(trans($this->couleur)),
                 'kilometrage' => $this->kilometrage,
+                'rest_km' => $this->intervalle,
                 'intervalle' => $this->intervalle,
                 'type_id' => $this->type_id,
                 'section_id' => $this->section_id

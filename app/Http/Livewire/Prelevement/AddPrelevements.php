@@ -13,6 +13,7 @@ class AddPrelevements extends Component
     public $dateprelevement;
 
     public $km;
+    public $intervalle;
 
     protected $rules = [
         'mobile_id' => 'required',
@@ -43,8 +44,9 @@ class AddPrelevements extends Component
     {
         $this->validate();
         try {
-            $var = Mobile::select('kilometrage')->where('id', $this->mobile_id)->first();
+            $var = Mobile::select('kilometrage', 'intervalle')->where('id', $this->mobile_id)->first();
             $this->km = $var->kilometrage;
+            $this->intervalle = $var->intervalle;
             Prelevement::create([
                 'mobile_id' => $this->mobile_id,
                 'kilometre' => $this->kilometre,
@@ -53,6 +55,7 @@ class AddPrelevements extends Component
             // Set Flash Message
             Mobile::whereId($this->mobile_id)->update([
                 'kilometrage' =>($this->km + $this->kilometre),
+                'reste_km' => ($this->km + $this->kilometre) - $this->intervalle,
             ]);
             $this->dispatchBrowserEvent('ok', [
                 'message' => '<b>Succès</b><br/><span style="color: #2d3354; ">enregistré</span>',
