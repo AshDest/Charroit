@@ -30,24 +30,24 @@
                                     <p class="mb-0 font-w-500 tx-s-12"></p>
                                 </div>
                                 <div class="ml-auto border-0 outline-badge-success circle-50"><span
-                                        class="h5 mb-0">$</span></div>
+                                        class="h5 mb-0"></span></div>
                             </div>
                             <div class="d-flex mt-4">
                                 <div class="border-0 outline-badge-info w-50 p-3 rounded text-center"><span
-                                        class="h5 mb-0">Income</span><br />
-                                    $78,600
+                                        class="h5 mb-0">Automobiles</span><br />
+                                    {{$mobiless->count()}}
                                 </div>
                                 <div class="border-0 outline-badge-success w-50 p-3 rounded ml-2 text-center"><span
-                                        class="h5 mb-0">Sales</span><br />
-                                    $1,24,600
+                                        class="h5 mb-0">Sections</span><br />
+                                    {{-- {{$sections}} --}}
                                 </div>
                                 <div class="border-0 outline-badge-primary w-50 p-3 rounded ml-2 text-center"><span
-                                        class="h5 mb-0">Income</span><br />
-                                    $78,600
+                                        class="h5 mb-0">Entretiens</span><br />
+                                    {{-- {{$entretiens}} --}}
                                 </div>
                                 <div class="border-0 outline-badge-warning w-50 p-3 rounded ml-2 text-center"><span
-                                        class="h5 mb-0">Sales</span><br />
-                                    $1,24,600
+                                        class="h5 mb-0">Garages</span><br />
+                                    {{-- {{$garages}} --}}
                                 </div>
                             </div>
                         </div>
@@ -75,8 +75,13 @@
                                     @forelse ($mobiles as $mobile)
                                         <td>{{$mobile->immatriculation}}-{{$mobile->marque}}-{{$mobile->couleur}}</td>
                                         <td class="text-success">{{$mobile->kilometrage}}<i class="ion ion-arrow-graph-up-right"></i>km</td>
-                                        <td class="text-danger">{{$mobile->rest_km}}<i class="ion ion-arrow-graph-down-right">km</i>
-                                        </td>
+                                        @if ($mobile->rest_km < 100)
+                                            <td class="text-danger">{{$mobile->rest_km}}<i class="ion ion-arrow-graph-down-right">km</i></td>
+                                        @elseif ($mobile->rest_km > 100 && $mobile->rest_km < 800)
+                                            <td class="text-warning">{{$mobile->rest_km}}<i class="ion ion-arrow-graph-down-right">km</i></td>
+                                        @else
+                                            <td class="text-success">{{$mobile->rest_km}}<i class="ion ion-arrow-graph-down-right">km</i></td>
+                                        @endif
                                         <td class="text-info">{{$mobile->intervalle}} km</td>
                                     @empty
 

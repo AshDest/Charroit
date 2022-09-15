@@ -2,7 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Entretien;
+use App\Models\Garage;
 use App\Models\Mobile;
+use App\Models\Section;
 use App\Models\Type_Mobile;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -13,11 +16,17 @@ class Dashboard extends Component
 
 
     public $perpage = 4;
-    public $types;
+    public $sections;
+    public $entretiens;
+    public $mobiless;
+    public $garages;
     // public $mobiles;
     public function mount()
     {
-        // $this->types = Type_Mobile::all();
+        $this->sections = Section::count();
+        $this->entretiens = Entretien::count();
+        $this->mobiles = Mobile::count();
+        $this->garages = Garage::count();
     }
     public function render()
     {
