@@ -35,19 +35,19 @@
                             <div class="d-flex mt-4">
                                 <div class="border-0 outline-badge-info w-50 p-3 rounded text-center"><span
                                         class="h5 mb-0">Automobiles</span><br />
-                                    {{$mobiless->count()}}
+                                    {{$mobiless}}
                                 </div>
                                 <div class="border-0 outline-badge-success w-50 p-3 rounded ml-2 text-center"><span
                                         class="h5 mb-0">Sections</span><br />
-                                    {{-- {{$sections}} --}}
+                                    {{$sections}}
                                 </div>
                                 <div class="border-0 outline-badge-primary w-50 p-3 rounded ml-2 text-center"><span
                                         class="h5 mb-0">Entretiens</span><br />
-                                    {{-- {{$entretiens}} --}}
+                                    {{$entretiens}}
                                 </div>
                                 <div class="border-0 outline-badge-warning w-50 p-3 rounded ml-2 text-center"><span
                                         class="h5 mb-0">Garages</span><br />
-                                    {{-- {{$garages}} --}}
+                                    {{$garages}}
                                 </div>
                             </div>
                         </div>

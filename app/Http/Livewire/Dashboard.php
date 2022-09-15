@@ -20,12 +20,14 @@ class Dashboard extends Component
     public $entretiens;
     public $mobiless;
     public $garages;
+
+    public $test;
     // public $mobiles;
     public function mount()
     {
         $this->sections = Section::count();
         $this->entretiens = Entretien::count();
-        $this->mobiles = Mobile::count();
+        $this->mobiless = Mobile::count();
         $this->garages = Garage::count();
     }
     public function render()
