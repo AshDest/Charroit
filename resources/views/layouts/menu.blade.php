@@ -7,18 +7,18 @@
                     <i class="fas fa-warehouse mr-1" style="color: #9dced4; ">
                     </i><span class="colorText">Tableau de bord</span></a></li>
             <li class="dropdown"><a href="#">
-                    <i class="fas fa-users mr-1" style="color: #9dced4; "></i>
+                    <i class="fa fa-wrench mr-1" style="color: #9dced4; "></i>
                     <span class="colorText">Entretien</span></a>
                 <ul>
-                    <li><a href="/addentretien">&nbsp;&nbsp;<i class="fas fa-user-plus"></i>Ajouter</a></li>
+                    <li><a href="/addentretien">&nbsp;&nbsp;<i class="icon-plus"></i>Ajouter</a></li>
                     <li><a href="/entretien">&nbsp;&nbsp;<i class="icon-book-open"></i> Liste</a></li>
                 </ul>
             </li>
             <li class="dropdown"><a href="#">
-                    <i class="fas fa-users mr-1" style="color: #9dced4; "></i>
+                    <i class="fas fa-thermometer-three-quarters mr-1" style="color: #9dced4; "></i>
                     <span class="colorText">Prelevement</span></a>
                 <ul>
-                    <li><a href="/addprelevement">&nbsp;&nbsp;<i class="fas fa-user-plus"></i>Ajouter</a></li>
+                    <li><a href="/addprelevement">&nbsp;&nbsp;<i class="icon-plus"></i>Ajouter</a></li>
                     <li><a href="/prelevement">&nbsp;&nbsp;<i class="icon-book-open"></i> Liste</a></li>
                 </ul>
             </li>
@@ -26,7 +26,7 @@
                 <i class="fas fa-car mr-1" style="color: #9dced4; "></i>
                 <span class="colorText">Véhicule</span></a>
             <ul>
-                <li><a href="/addmobiles">&nbsp;&nbsp;<i class="fas fa-car"></i>Ajouter</a></li>
+                <li><a href="/addmobiles">&nbsp;&nbsp;<i class="icon-plus"></i>Ajouter</a></li>
                 <li><a href="/mobiles">&nbsp;&nbsp;<i class="fas fa-clipboard-list"></i> Liste</a></li>
             </ul>
         </li>

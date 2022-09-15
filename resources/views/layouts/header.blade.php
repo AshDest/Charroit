@@ -4,7 +4,7 @@
         <nav class="navbar navbar-expand-lg  p-0">
             <div class="navbar-header  h-100 h4 mb-0 align-self-center logo-bar text-left">
                 <a href="/" class="horizontal-logo text-left">
-                    <span class="h4 font-weight-bold align-self-center mb-0 ml-auto">Charroit</span>
+                    <span class="h4 font-weight-bold align-self-center mb-0 ml-auto" style="text-decoration-color: blue">Charroit</span>
                 </a>
             </div>
             <div class="navbar-header h4 mb-0 text-center h-100 collapse-menu-bar">
