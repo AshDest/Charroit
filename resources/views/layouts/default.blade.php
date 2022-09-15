@@ -155,8 +155,6 @@
 
     <script src="{{ asset('dist/js/sweetalert2.min.js') }}"></script>
     <script src="{{ asset('dist/js/sweetalert.script.js') }}"></script>
-
-             FOT TOAST
     <script src="{{ asset('dist/vendors/toastr/toastr.min.js') }}"></script>
     <script src="{{ asset('dist/js/toastr.script.js') }}"></script>
 
