@@ -58,8 +58,8 @@
                         <div class="dropdown-menu border dropdown-menu-right p-0">
                             <a href="" class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-pencil mr-2 h6 mb-0"></span> Modifier Profile</a>
-                            <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                <span class="icon-user mr-2 h6 mb-0"></span> Voir Profile</a>
+                            <a href="/user" class="dropdown-item px-2 align-self-center d-flex">
+                                <span class="icon-user mr-2 h6 mb-0"></span> Utilisateurs</a>
                             <div class="dropdown-divider"></div>
                             <a href="" class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-support mr-2 h6  mb-0"></span> Centre d'aide</a>
