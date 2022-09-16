@@ -16,6 +16,8 @@ class AddEntretien extends Component
     public $kilometre;
     public $cout;
 
+    public $nbreEntretien;
+
     protected $rules = [
         'garage_id' => 'required',
         'mobile_id' => 'required',
@@ -51,8 +53,8 @@ class AddEntretien extends Component
     {
         $this->validate();
         try {
-            // $var = Mobile::select('rest_km')->where('id', $this->mobile_id)->first();
-            // $this->rest_km = $var->rest_km;
+            $var = Mobile::select('nbre_entretien')->where('id', $this->mobile_id)->first();
+            $this->nbreEntretien = $var->rest_km;
             Entretien::create([
                 'garage_id' => $this->garage_id,
                 'mobile_id' => $this->mobile_id,
@@ -63,6 +65,7 @@ class AddEntretien extends Component
 
             if ($this->kilometre) {
                 Mobile::whereId($this->mobile_id)->update([
+                    'nbre_entretien' => $this->nbreEntretien + 1,
                     'rest_km' =>$this->kilometre,
                 ]);
             }
@@ -84,6 +87,6 @@ class AddEntretien extends Component
     {
         $mobiles = Mobile::all();
         $garages = Garage::all();
-        return view('livewire.entretien.add-entretien', ['mobiles' => $mobiles], ['garages' => $garages]);
+        return view('livewire.entretien.add-entretien', ['mobiles' => $mobiles, 'garages' => $garages]);
     }
 }
