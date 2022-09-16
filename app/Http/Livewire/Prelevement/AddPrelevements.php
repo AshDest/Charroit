@@ -65,7 +65,7 @@ class AddPrelevements extends Component
                 ]);
                 $this->resetFields();
             }else {
-                $this->dispatchBrowserEvent('fail', [
+                $this->dispatchBrowserEvent('info', [
                     'message' => "Veuillez mettre le kilometrage valide! "
                 ]);
             }
