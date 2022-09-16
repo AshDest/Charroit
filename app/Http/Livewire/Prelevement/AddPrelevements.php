@@ -64,6 +64,10 @@ class AddPrelevements extends Component
                     'message' => '<b>Succès</b><br/><span style="color: #2d3354; ">enregistré</span>',
                 ]);
                 $this->resetFields();
+            }else {
+                $this->dispatchBrowserEvent('fail', [
+                    'message' => "Veuillez mettre le kilometrage valide! "
+                ]);
             }
 
         } catch (\Exception $e) {
