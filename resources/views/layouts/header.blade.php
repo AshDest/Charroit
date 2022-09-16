@@ -61,12 +61,12 @@
                             <a href="/user" class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-user mr-2 h6 mb-0"></span> Utilisateurs</a>
                             <div class="dropdown-divider"></div>
-                            <a href="" class="dropdown-item px-2 align-self-center d-flex">
+                            {{-- <a href="" class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-support mr-2 h6  mb-0"></span> Centre d'aide</a>
                             <a href="" class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-globe mr-2 h6 mb-0"></span> Forum</a>
                             <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                <span class="icon-settings mr-2 h6 mb-0"></span> Paramètres du compte</a>
+                                <span class="icon-settings mr-2 h6 mb-0"></span> Paramètres du compte</a> --}}
                             <div class="dropdown-divider"></div>
 
                             <a href="{{ route('logout') }}"
