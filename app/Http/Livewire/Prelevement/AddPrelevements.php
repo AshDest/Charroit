@@ -49,21 +49,23 @@ class AddPrelevements extends Component
             $var = Mobile::select('kilometrage', 'rest_km')->where('id', $this->mobile_id)->first();
             $this->km = $var->kilometrage;
             $this->rest_km = $var->rest_km;
-            // dd($this->rest_km - ($this->kilometre - $this->km));
-            Prelevement::create([
-                'mobile_id' => $this->mobile_id,
-                'kilometre' => $this->kilometre,
-                'dateprelevement' => $this->dateprelevement,
-            ])->save();
-            // Set Flash Message
-            Mobile::whereId($this->mobile_id)->update([
-                'kilometrage' => $this->kilometre,
-                'rest_km' => $this->rest_km - ($this->kilometre - $this->km),
-            ]);
-            $this->dispatchBrowserEvent('ok', [
-                'message' => '<b>Succès</b><br/><span style="color: #2d3354; ">enregistré</span>',
-            ]);
-            $this->resetFields();
+            if ($this->km <= $this->kilometre) {
+                Prelevement::create([
+                    'mobile_id' => $this->mobile_id,
+                    'kilometre' => $this->kilometre,
+                    'dateprelevement' => $this->dateprelevement,
+                ])->save();
+                // Set Flash Message
+                Mobile::whereId($this->mobile_id)->update([
+                    'kilometrage' => $this->kilometre,
+                    'rest_km' => $this->rest_km - ($this->kilometre - $this->km),
+                ]);
+                $this->dispatchBrowserEvent('ok', [
+                    'message' => '<b>Succès</b><br/><span style="color: #2d3354; ">enregistré</span>',
+                ]);
+                $this->resetFields();
+            }
+
         } catch (\Exception $e) {
             // Set Flash Message
             $this->dispatchBrowserEvent('fail', [

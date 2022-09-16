@@ -51,6 +51,8 @@ class AddEntretien extends Component
     {
         $this->validate();
         try {
+            // $var = Mobile::select('rest_km')->where('id', $this->mobile_id)->first();
+            // $this->rest_km = $var->rest_km;
             Entretien::create([
                 'garage_id' => $this->garage_id,
                 'mobile_id' => $this->mobile_id,
@@ -61,8 +63,7 @@ class AddEntretien extends Component
 
             if ($this->kilometre) {
                 Mobile::whereId($this->mobile_id)->update([
-                    'kilometrage' => $this->kilometre,
-                    'rest_km' => $this->rest_km - ($this->kilometre - $this->km),
+                    'rest_km' =>$this->kilometre,
                 ]);
             }
             // Set Flash Message
