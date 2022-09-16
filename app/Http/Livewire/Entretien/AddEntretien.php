@@ -13,6 +13,7 @@ class AddEntretien extends Component
     public $mobile_id;
     public $date_entretien;
     public $entretien;
+    public $kilometre;
     public $cout;
 
     protected $rules = [
@@ -57,6 +58,13 @@ class AddEntretien extends Component
                 'entretien' => $this->entretien,
                 'cout' => $this->cout,
             ])->save();
+
+            if ($this->kilometre) {
+                Mobile::whereId($this->mobile_id)->update([
+                    'kilometrage' => $this->kilometre,
+                    'rest_km' => $this->rest_km - ($this->kilometre - $this->km),
+                ]);
+            }
             // Set Flash Message
             $this->dispatchBrowserEvent('ok', [
                 'message' => '<b>Succès</b><br/><span style="color: #2d3354; ">enregistré</span>',

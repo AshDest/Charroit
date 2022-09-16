@@ -59,9 +59,8 @@
                                     </div>
                                     @enderror
                                 </div>
-
                                 <div class="form-group col-sm-4 mb-2">
-                                    <label for="entretien">Entretien Effectuées
+                                    <label for="entretien">Entretiens Effectuées
                                     </label>
                                     <textarea wire:model="entretien" placeholder=" entretien"
                                         class="form-control @error('entretien') is-invalid @enderror"> </textarea>
@@ -71,6 +70,18 @@
                                     </div>
                                     @enderror
                                 </div>
+                                <div class="form-group col-sm-4 mb-2">
+                                    <label for="kilometre">Kilometre avant Entretien
+                                    </label>
+                                    <input type="number" wire:model="kilometre" placeholder=" kilometre"
+                                        class="form-control @error('kilometre') is-invalid @enderror" />
+                                    @error('kilometre')
+                                    <div class="invalid-feedback">
+                                        <i class="fas fa-exclamation-triangle"></i>&nbsp;{{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+
                                 <div class="form-group col-sm-12">
                                     <button type="submit" class="btn btn-primary col-sm-12">
                                         <i class="icon-plus"></i>&ensp;&ensp;Enregistrer Entretien
