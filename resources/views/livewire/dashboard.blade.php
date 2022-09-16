@@ -62,141 +62,34 @@
                     <div class="card-content">
                         <div class="card-body p-0">
                             <ul class="list-group list-unstyled">
-                                <li class="p-2 border-bottom zoom">
-                                    <div class="media d-flex w-100">
-                                        <a href="#"><img src="{{ asset('dist/images/author1.jpg') }}" alt="" class="img-fluid ml-0 mt-2  rounded-circle" width="40"></a>
-                                        <div class="media-body align-self-center pl-2">
-                                            <span class="mb-0 font-w-600">Jonathan</span><br>
-                                            <p class="mb-0 font-w-500 tx-s-12">San Francisco, California, USA</p>
-                                        </div>
-                                        <div class="ml-auto my-auto">
-                                            <a href="#"  data-toggle="dropdown">
-                                                <i class="icon-options icons h6 font-weight-bold"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                                    <span class="icon-pencil mr-2 h6 mb-0"></span> Edit Profile</a>
-                                                <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                                    <span class="icon-user mr-2 h6 mb-0"></span> View Profile</a>
-                                                <a href="" class="dropdown-item px-2 text-danger align-self-center d-flex">
-                                                    <span class="icon-trash mr-2 h6  mb-0"></span> Delete</a>
+                                @forelse ($mobileskms as $mobileskm)
+                                    <li class="p-2 border-bottom zoom">
+                                        <div class="media d-flex w-100">
+                                            <a href="#"><img src="{{ asset('dist/images/voitures.gif') }}" alt="" class="img-fluid ml-0 mt-2  rounded-circle" width="40"></a>
+                                            <div class="media-body align-self-center pl-2">
+                                                <span class="mb-0 font-w-600">{{$mobileskm->kilometrage}} km</span><br>
+                                                <p class="mb-0 font-w-500 tx-s-12">{{$mobileskm->immatriculation}} - {{$mobileskm->marque}} - {{$mobileskm->couleur}}</p>
+                                            </div>
+                                            <div class="ml-auto my-auto">
+                                                <a href="#"  data-toggle="dropdown">
+                                                    <i class="icon-options icons h6 font-weight-bold"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="" class="dropdown-item px-2 align-self-center d-flex">
+                                                        <span class="icon-pencil mr-2 h6 mb-0"></span> Edit Profile</a>
+                                                    <a href="" class="dropdown-item px-2 align-self-center d-flex">
+                                                        <span class="icon-user mr-2 h6 mb-0"></span> View Profile</a>
+                                                    <a href="" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                                                        <span class="icon-trash mr-2 h6  mb-0"></span> Delete</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="p-2 border-bottom zoom">
-                                    <div class="media d-flex w-100">
-                                        <a href="#"><img src="{{ asset('dist/images/author2.jpg') }}" alt="" class="img-fluid ml-0 mt-2  rounded-circle" width="40"></a>
-                                        <div class="media-body align-self-center pl-2">
-                                            <span class="mb-0 font-w-600">kelvin</span><br>
-                                            <p class="mb-0 font-w-500 tx-s-12">San Francisco, California, USA</p>
-                                        </div>
-                                        <div class="ml-auto my-auto">
-                                            <a href="#"  data-toggle="dropdown">
-                                                <i class="icon-options icons h6 font-weight-bold"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                                    <span class="icon-pencil mr-2 h6 mb-0"></span> Edit Profile</a>
-                                                <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                                    <span class="icon-user mr-2 h6 mb-0"></span> View Profile</a>
-                                                <a href="" class="dropdown-item px-2 text-danger align-self-center d-flex">
-                                                    <span class="icon-trash mr-2 h6  mb-0"></span> Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="p-2 border-bottom zoom">
-                                    <div class="media d-flex w-100">
-                                        <a href="#"><img src="{{ asset('dist/images/author3.jpg') }}" alt="" class="img-fluid ml-0 mt-2 rounded-circle" width="40"></a>
-                                        <div class="media-body align-self-center pl-2">
-                                            <span class="mb-0 font-w-600">Peter</span><br>
-                                            <p class="mb-0 font-w-500 tx-s-12">San Francisco, California, USA</p>
-                                        </div>
-                                        <div class="ml-auto my-auto">
-                                            <a href="#"  data-toggle="dropdown">
-                                                <i class="icon-options icons h6 font-weight-bold"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                                    <span class="icon-pencil mr-2 h6 mb-0"></span> Edit Profile</a>
-                                                <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                                    <span class="icon-user mr-2 h6 mb-0"></span> View Profile</a>
-                                                <a href="" class="dropdown-item px-2 text-danger align-self-center d-flex">
-                                                    <span class="icon-trash mr-2 h6  mb-0"></span> Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="p-2 border-bottom zoom">
-                                    <div class="media d-flex w-100">
-                                        <a href="#"><img src="{{ asset('dist/images/author9.jpg') }}" alt="" class="img-fluid ml-0 mt-2 rounded-circle" width="40"></a>
-                                        <div class="media-body align-self-center pl-2">
-                                            <span class="mb-0 font-w-600">Ray Sin</span><br>
-                                            <p class="mb-0 font-w-500 tx-s-12">San Francisco, California, USA</p>
-                                        </div>
-                                        <div class="ml-auto my-auto">
-                                            <a href="#"  data-toggle="dropdown">
-                                                <i class="icon-options icons h6 font-weight-bold"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                                    <span class="icon-pencil mr-2 h6 mb-0"></span> Edit Profile</a>
-                                                <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                                    <span class="icon-user mr-2 h6 mb-0"></span> View Profile</a>
-                                                <a href="" class="dropdown-item px-2 text-danger align-self-center d-flex">
-                                                    <span class="icon-trash mr-2 h6  mb-0"></span> Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="p-2 border-bottom zoom">
-                                    <div class="media d-flex w-100">
-                                        <a href="#"><img src="{{ asset('dist/images/author6.jpg') }}" alt="" class="img-fluid ml-0 mt-2 rounded-circle" width="40"></a>
-                                        <div class="media-body align-self-center pl-2">
-                                            <span class="mb-0 font-w-600">Abexon Dixon</span><br/>
-                                            <p class="mb-0 font-w-500 tx-s-12">San Francisco, California, USA</p>
-                                        </div>
-
-                                        <div class="ml-auto mail-tools">
-                                            <a href="#"  data-toggle="dropdown">
-                                                <i class="icon-options icons h6 font-weight-bold"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                                    <span class="icon-pencil mr-2 h6 mb-0"></span> Edit Profile</a>
-                                                <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                                    <span class="icon-user mr-2 h6 mb-0"></span> View Profile</a>
-                                                <a href="" class="dropdown-item px-2 text-danger align-self-center d-flex">
-                                                    <span class="icon-trash mr-2 h6  mb-0"></span> Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="p-2 zoom">
-                                    <div class="media d-flex w-100">
-                                        <a href="#"><img src="{{ asset('dist/images/author7.jpg') }}" alt="" class="img-fluid ml-0 mt-2 rounded-circle" width="40"></a>
-                                        <div class="media-body align-self-center pl-2">
-                                            <span class="mb-0 font-w-600">Nathan S. Johnson</span><br/>
-                                            <p class="mb-0 font-w-500 tx-s-12">San Francisco, California, USA</p>
-                                        </div>
-
-                                        <div class="ml-auto mail-tools">
-                                            <a href="#"  data-toggle="dropdown">
-                                                <i class="icon-options icons h6 font-weight-bold"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                                    <span class="icon-pencil mr-2 h6 mb-0"></span> Edit Profile</a>
-                                                <a href="" class="dropdown-item px-2 align-self-center d-flex">
-                                                    <span class="icon-user mr-2 h6 mb-0"></span> View Profile</a>
-                                                <a href="" class="dropdown-item px-2 text-danger align-self-center d-flex">
-                                                    <span class="icon-trash mr-2 h6  mb-0"></span> Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
+                                    </li>
+                                @empty
+                                    <li>
+                                            <center> ... Liste vide ....</center>
+                                    </li>
+                                @endforelse
                             </ul>
                         </div>
                     </div>

@@ -35,6 +35,8 @@ class Dashboard extends Component
         return view('livewire.dashboard', [
             'mobiles' => Mobile::orderBy('created_at', 'DESC')
             ->paginate($this->perpage),
+            'mobileskms' => Mobile::orderBy('kilometrage', 'DESC')
+            ->paginate($this->perpage),
         ]);
     }
 }
