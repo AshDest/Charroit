@@ -70,7 +70,7 @@
                                                 <span class="mb-0 font-w-600">{{$mobileskm->kilometrage}} km</span><br>
                                                 <p class="mb-0 font-w-500 tx-s-12">{{$mobileskm->immatriculation}} - {{$mobileskm->marque}} - {{$mobileskm->couleur}}</p>
                                             </div>
-                                            <div class="ml-auto my-auto">
+                                            {{-- <div class="ml-auto my-auto">
                                                 <a href="#"  data-toggle="dropdown">
                                                     <i class="icon-options icons h6 font-weight-bold"></i>
                                                 </a>
@@ -82,7 +82,7 @@
                                                     <a href="" class="dropdown-item px-2 text-danger align-self-center d-flex">
                                                         <span class="icon-trash mr-2 h6  mb-0"></span> Delete</a>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </li>
                                 @empty
